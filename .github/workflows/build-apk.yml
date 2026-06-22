@@ -43,9 +43,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.buildozer
-          key: ${{ runner.os }}-buildozer-${{ hashFiles('buildozer.spec') }}-v3
-          restore-keys: |
-            ${{ runner.os }}-buildozer-
+          # No restore-keys: stale caches from different arch configs cause broken builds.
+          # Only an exact match is used; everything else starts fresh.
+          key: ${{ runner.os }}-buildozer-${{ hashFiles('buildozer.spec') }}-v4
 
       # ── 5. Install Buildozer ──────────────────────────────────────────────
       - name: Install Buildozer and Cython
