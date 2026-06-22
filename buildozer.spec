@@ -14,7 +14,10 @@ source.exclude_dirs = tests, bin, .buildozer, .github, __pycache__
 version = 1.0
 
 # Requirements – only stdlib + kivy needed
-requirements = python3,kivy==2.3.0
+# No version pin: let p4a use its own kivy recipe, which ships
+# Cython-generated C files compatible with NDK 25+.
+# Pinning kivy==2.3.0 causes compile errors with NDK >= 25.
+requirements = python3,kivy
 
 # Orientation
 orientation = portrait
@@ -36,9 +39,10 @@ fullscreen = 0
 android.api = 34
 android.minapi = 21
 
-# NDK r23b is required for Kivy 2.3.0.
-# NDK r25b and newer break compilation (glShaderBinary signature mismatch).
-android.ndk = 23b
+# NDK r25b: meets p4a master's minimum requirement (>= 25).
+# NDK r23b was rejected by p4a; kivy==2.3.0 pin caused C compile errors on 25b,
+# so we dropped the version pin and let p4a use its own compatible recipe.
+android.ndk = 25b
 android.ndk_api = 21
 
 # Store source privately inside the APK
