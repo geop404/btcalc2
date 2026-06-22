@@ -36,8 +36,9 @@ fullscreen = 0
 android.api = 34
 android.minapi = 21
 
-# NDK version – 25b is stable and well-tested with Kivy 2.3.x
-android.ndk = 25b
+# NDK r23b is required for Kivy 2.3.0.
+# NDK r25b and newer break compilation (glShaderBinary signature mismatch).
+android.ndk = 23b
 android.ndk_api = 21
 
 # Store source privately inside the APK
@@ -46,8 +47,10 @@ android.private_storage = True
 # Automatically accept Android SDK licenses (required for CI)
 android.accept_sdk_license = True
 
-# Build for both modern (arm64) and older (armeabi-v7a) devices
-android.archs = arm64-v8a, armeabi-v7a
+# arm64-v8a covers all Android phones since 2015.
+# armeabi-v7a (32-bit) is excluded – it has a known compile error with
+# Kivy 2.3.0 + NDK r25b (shader.c: too few arguments to function call).
+android.archs = arm64-v8a
 
 # Allow Android auto-backup
 android.allow_backup = True
