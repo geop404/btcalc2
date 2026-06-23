@@ -16,6 +16,9 @@ MISSILE_TABLE = {
     "SRM2":  {2:1,  3:1,  4:1,  5:1,  6:1,  7:1,  8:2,  9:2,  10:2,  11:2,  12:2},
     "SRM4":  {2:1,  3:2,  4:2,  5:2,  6:2,  7:3,  8:3,  9:3,  10:4,  11:4,  12:4},
     "SRM6":  {2:2,  3:2,  4:3,  5:3,  6:4,  7:4,  8:4,  9:5,  10:5,  11:6,  12:6},
+    "STREAKSRM2":  {2:2,  3:2,  4:2,  5:2,  6:2,  7:2,  8:2,  9:2,  10:2,  11:2,  12:2},
+    "STREAKSRM4":  {2:4,  3:4,  4:4,  5:4,  6:4,  7:4,  8:4,  9:4,  10:4,  11:4,  12:4},
+    "STREAKSRM6":  {2:6,  3:6,  4:6,  5:6,  6:6,  7:6,  8:6,  9:6,  10:6,  11:6,  12:6},
     "LRM5":  {2:1,  3:2,  4:2,  5:3,  6:3,  7:3,  8:3,  9:4,  10:4,  11:5,  12:5},
     "LRM10": {2:3,  3:3,  4:4,  5:6,  6:6,  7:6,  8:6,  9:8,  10:8,  11:10, 12:10},
     "LRM15": {2:5,  3:5,  4:6,  5:9,  6:9,  7:9,  8:9,  9:12, 10:12, 11:15, 12:15},
@@ -26,6 +29,9 @@ WEAPONS = {
     "SRM2":      {"dmg": "x2",  "heat": 2,  "missile": True},
     "SRM4":      {"dmg": "x2",  "heat": 3,  "missile": True},
     "SRM6":      {"dmg": "x2",  "heat": 4,  "missile": True},
+    "STREAKSRM2":      {"dmg": "x2",  "heat": 2,  "missile": True},
+    "STREAKSRM4":      {"dmg": "x2",  "heat": 3,  "missile": True},
+    "STREAKSRM6":      {"dmg": "x2",  "heat": 4,  "missile": True},
     "LRM5":      {"dmg": "x1",  "heat": 2,  "missile": True},
     "LRM10":     {"dmg": "x1",  "heat": 4,  "missile": True},
     "LRM15":     {"dmg": "x1",  "heat": 5,  "missile": True},
@@ -219,7 +225,7 @@ KV = """
                     Spinner:
                         id: weapon_spinner
                         text: 'SRM2'
-                        values: ['SRM2','SRM4','SRM6','LRM5','LRM10','LRM15','LRM20','SLASER','MLASER','LLASER','ERSLASER','ERMLASER','ERLLASER','PPC','ERPPC','AC2','AC5','AC10','AC20','ULTRAAC2','ULTRAAC5','ULTRAAC10','ULTRAAC20','GAUS','MGUN']
+                        values: ['SRM2','SRM4','SRM6','STREAKSRM2','STREAKSRM4','STREAKSRM6','LRM5','LRM10','LRM15','LRM20','SLASER','MLASER','LLASER','ERSLASER','ERMLASER','ERLLASER','PPC','ERPPC','AC2','AC5','AC10','AC20','ULTRAAC2','ULTRAAC5','ULTRAAC10','ULTRAAC20','GAUS','MGUN']
                         option_cls: app.DarkSpinnerOption
                         background_normal: ''
                         background_color: 0.082, 0.258, 0.478, 1
